@@ -1,0 +1,124 @@
+@import "tailwindcss";
+
+:root {
+  /* Chalk + iron — locked palette. NOT near-black-with-accent. */
+  --chalk: #e4e2dd;       /* ground — gym chalk dust on a lifting board */
+  --chalk-raised: #d9d7d0; /* slightly deeper chalk for panels */
+  --ink: #1a1a18;          /* primary text / numerals */
+  --iron: #c1443a;         /* iron-oxide red — 25kg IWF plate rim */
+  --iron-ink: #8f2f28;     /* pressed/hover state of iron */
+  --steel: #635f59;        /* secondary text, rules, muted — 4.9:1 on chalk (WCAG AA) */
+  --steel-line: #c7c4bd;   /* hairlines on chalk */
+
+  /* Theme-invariant inverse band — the CTA footer and button always read as
+     the stamped-iron dark surface, regardless of light/dark mode. Unlike
+     --ink/--chalk these two never swap roles between themes. */
+  --inverse-surface: #1a1a18;
+  --inverse-ink: #e4e2dd;
+
+  --font-display: var(--font-anton);
+  --font-body: var(--font-barlow);
+}
+
+/* Dark mode — a designed second surface: worn cast-iron plate, not near-black. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --chalk: #232320;
+    --chalk-raised: #2b2b27;
+    --ink: #ede9e2;
+    --iron: #d35b4f;
+    --iron-ink: #e78379;
+    --steel: #9c988f;
+    --steel-line: #3c3c37;
+  }
+}
+
+:root[data-theme="dark"] {
+  --chalk: #232320;
+  --chalk-raised: #2b2b27;
+  --ink: #ede9e2;
+  --iron: #d35b4f;
+  --iron-ink: #e78379;
+  --steel: #9c988f;
+  --steel-line: #3c3c37;
+}
+
+@theme inline {
+  --color-chalk: var(--chalk);
+  --color-chalk-raised: var(--chalk-raised);
+  --color-ink: var(--ink);
+  --color-iron: var(--iron);
+  --color-iron-ink: var(--iron-ink);
+  --color-steel: var(--steel);
+  --color-steel-line: var(--steel-line);
+  --color-inverse-surface: var(--inverse-surface);
+  --color-inverse-ink: var(--inverse-ink);
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  background: var(--chalk);
+  color: var(--ink);
+  font-family: var(--font-body);
+}
+
+::selection {
+  background: var(--iron);
+  color: var(--chalk);
+}
+
+:focus-visible {
+  outline: 3px solid var(--iron);
+  outline-offset: 3px;
+}
+
+/* art-directed photo treatment: B&W, hard contrast, grain — identical on every image */
+.plate-photo {
+  filter: grayscale(1) contrast(1.28) brightness(0.98);
+}
+.plate-photo-wrap {
+  position: relative;
+  overflow: hidden;
+  background: var(--inverse-surface);
+}
+.plate-photo-wrap::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.08;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E");
+}
+
+/* horizontal scroll band */
+.band-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: var(--steel) transparent;
+}
+.band-scroll::-webkit-scrollbar {
+  height: 8px;
+}
+.band-scroll::-webkit-scrollbar-thumb {
+  background: var(--steel);
+  border-radius: 0;
+}
