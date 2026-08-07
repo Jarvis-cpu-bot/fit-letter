@@ -15,7 +15,7 @@ export default function Hero() {
 
       <div className="relative mx-auto flex max-w-3xl flex-col gap-8">
         <p className="font-body text-sm font-semibold uppercase tracking-[0.14em] text-steel">
-          The Fit Letter · weekly programme
+          Illuminate Digm · weekly programme
         </p>
 
         <h1

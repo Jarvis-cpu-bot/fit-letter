@@ -24,7 +24,7 @@ export default function Proof() {
             what&apos;s on the card.&rdquo;
           </blockquote>
           <p className="font-body text-base text-steel">
-            — Dana R., three years training, first year on The Fit Letter
+            — Dana R., three years training, first year on Illuminate Digm
           </p>
           <div className="mt-2 flex flex-col gap-4 border-t-2 border-ink pt-6 font-body text-base text-ink/80">
             <p>Every issue gives you the same three things:</p>

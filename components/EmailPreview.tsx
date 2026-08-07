@@ -44,8 +44,8 @@ export default function EmailPreview() {
             </div>
             <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 font-body text-sm text-steel">
               <span>
-                <span className="font-semibold text-ink">The Fit Letter</span>{" "}
-                &lt;programme@thefitletter.co&gt;
+                <span className="font-semibold text-ink">Illuminate Digm</span>{" "}
+                &lt;programme@illuminatedigm.info&gt;
               </span>
               <span>Mon, 6:00 AM</span>
             </div>
@@ -89,7 +89,7 @@ export default function EmailPreview() {
             <p className="pt-2">
               See you Thursday,
               <br />
-              <span className="font-semibold text-ink">Marcus — The Fit Letter</span>
+              <span className="font-semibold text-ink">Dax — Illuminate Digm</span>
             </p>
           </div>
         </div>
