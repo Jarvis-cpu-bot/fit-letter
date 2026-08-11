@@ -28,7 +28,7 @@ export default function FooterCta() {
         </div>
 
         <div className="mt-10 flex flex-col gap-2 border-t border-inverse-ink/20 pt-6 font-body text-sm text-inverse-ink/60 sm:flex-row sm:justify-between">
-          <p>Illuminate Digm — training and strength, weekly.</p>
+          <p>Verity Nectra — training and strength, weekly.</p>
           <p>No spam. One email a week. Unsubscribe any time.</p>
         </div>
       </div>

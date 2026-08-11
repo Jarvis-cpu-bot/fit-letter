@@ -17,32 +17,32 @@ const barlow = Barlow({
   display: "swap",
 });
 
-const siteUrl = "https://illuminatedigm.info";
+const siteUrl = "https://veritynectra.info";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: "Illuminate Digm — a programme in your inbox, every week",
+  title: "Verity Nectra — a programme in your inbox, every week",
   description:
     "One lift-focused email a week. Sets, reps, load, and why. No fluff, no supplement pitches. Built for people who train regularly.",
   openGraph: {
-    title: "Illuminate Digm",
+    title: "Verity Nectra",
     description:
       "One lift-focused email a week. Sets, reps, load, and why. Built for people who train regularly.",
     url: siteUrl,
-    siteName: "Illuminate Digm",
+    siteName: "Verity Nectra",
     type: "website",
     images: [
       {
         url: PLATE_PHOTOS.plateCloseup.src,
         width: 900,
         height: 900,
-        alt: "Illuminate Digm — 5x5, 3x8: your next programme in your inbox",
+        alt: "Verity Nectra — 5x5, 3x8: your next programme in your inbox",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Illuminate Digm",
+    title: "Verity Nectra",
     description: "One lift-focused email a week. Sets, reps, load, and why.",
     images: [PLATE_PHOTOS.plateCloseup.src],
   },
